@@ -13,6 +13,13 @@ Flow:
 * the user is then redirected back to the service's return url specified in the original request.
 * the url is processed by fireauth, session is authenticated and/or new user is created, then redirected to the
 
+The security rule depends on how you manage your users amd auth info.  For example if you store auth-map/:provider/:provider_id/username, can you verify that the user is writing authz response with his/her username:
+
+    authz:
+      $id:
+          '.read': "auth != null && data.child('username').val() === null",
+          '.write': "auth != null && (newData.child('username').val() === root.child('auth-map/' + auth.provider + '/' + auth.id + '/username').val())"
+
 Todo:
 
 * currently service needs full firebase access.  we can maintain an app collection and add rules to allow apps writing authz requests with appkey granted.
