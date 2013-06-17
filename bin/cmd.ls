@@ -48,4 +48,4 @@ app.get "/#{prefix}/auth" (req, res) ->
         if it.val! is null
             clearTimeout cleanup
 
-app.listen PORT ? 8090
+app.listen port

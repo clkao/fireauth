@@ -60,7 +60,7 @@ m.authenticate(config[module], function(auth){
       z = root.child('authz').push();
       z.set({
         req: 'user',
-        uri: config.lqfb.url + "/auth"
+        uri: config[module].auth_url + "/auth"
       });
       sessionMap[z.name()] = session;
       res.redirect(config.authz_url + "/" + z.name());
@@ -74,6 +74,6 @@ m.authenticate(config[module], function(auth){
         }
       });
     });
-    return app.listen(typeof PORT != 'undefined' && PORT !== null ? PORT : 8090);
+    return app.listen(port);
   });
 });
