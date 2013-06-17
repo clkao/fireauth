@@ -24,5 +24,6 @@ dependencies:
   optimist: \0.5.x
   firebase: \0.5.x
   qs: \0.6.x
+  request: \2.21.x
 devDependencies:
   LiveScript: '1.1.x'
