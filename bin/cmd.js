@@ -60,7 +60,7 @@ m.authenticate(config[module], function(auth){
       z = root.child('authz').push();
       z.set({
         req: 'user',
-        uri: config[module].auth_url + "/auth"
+        uri: config[module].auth_url
       });
       sessionMap[z.name()] = session;
       res.redirect(config.authz_url + "/" + z.name());

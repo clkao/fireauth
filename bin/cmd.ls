@@ -39,7 +39,7 @@ app.get "/#{prefix}/auth" (req, res) ->
     session = req.cookies.liquid_feedback_session
     return res.send 401 \bye unless session
     z = root.child 'authz' .push()
-    z.set req: \user, uri: config[module].auth_url + "/auth"
+    z.set req: \user, uri: config[module].auth_url
 
     session-map[ z.name! ] = session
     res.redirect "#{ config.authz_url }/#{ z.name! }"
