@@ -1,0 +1,22 @@
+{
+    "authz_url": "http://myfirebaseapp.example.com/authz",
+    "port": 8090,
+    "prefix": "",
+    "firebase": {
+        "secret": "YOUR_SECRET_KEY",
+        "url": "https://YOUR_FIREBASE.firebaseio.com"
+    },
+    /* liquid feedback module */
+    "lqfb": {
+        "default_units": ["Public", "g0v.tw"],
+        "db": "tcp://lf_user:lf_password@127.0.0.1:5432/lf_db",
+        "url": "http://mylqfb.example.com/lf",
+        "auth_url": "http://mylqfb.example.com/lf/auth",
+        /* optionally enable etherpad */
+        "etherpad": {
+            "group": "g.GROUP_ID",
+            "url": "http://localhost:9001/ep",
+            "apikey": "APIKEY"
+        }
+    }
+}
